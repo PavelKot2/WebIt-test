@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Task</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.min.css">
+</head>
+<body>
+  <svg style="display:none;">
+    <symbol viewBox="0 0 512 512" id="arrow-up">
+      <polygon points="396.6,352 416,331.3 256,160 96,331.3 115.3,352 256,201.5 "/>
+    </symbol>
+    <symbol viewBox="0 0 512 512" id="arrow-down">
+      <polygon points="396.6,160 416,180.7 256,352 96,180.7 115.3,160 256,310.5 "/>
+    </symbol>
+    <symbol viewBox="0 0 32 32" id="arrow-right">
+      <path clip-rule="evenodd" d="M32,16.009c0-0.267-0.11-0.522-0.293-0.714
+       l-9.899-9.999c-0.391-0.395-1.024-0.394-1.414,0c-0.391,0.394-0.391,1.034,0,1.428l8.193,8.275H1c-0.552,0-1,0.452-1,1.01
+        s0.448,1.01,1,1.01h27.586l-8.192,8.275c-0.391,0.394-0.39,1.034,0,1.428c0.391,0.394,1.024,0.394,1.414,0l9.899-9.999
+         C31.894,16.534,31.997,16.274,32,16.009z"/>
+    </symbol>
+    <symbol viewBox="0 0 29.97 16.84" id="vk-logo">
+      <path class="cls-1" d="M6562.68,4044.76h1.79a1.561,1.561,0,0,0,.82-0.35,1.314,1.314,0,0,0,.25-0.77s-0.04-2.37,1.08-2.72c1.1-.35,2.51,2.29,4.01,3.3a2.847,2.847,0,0,0,1.99.6l4.01-.06s2.09-.12,1.1-1.75a13.232,13.232,0,0,0-2.98-3.39c-2.51-2.29-2.17-1.92.85-5.89,1.84-2.42,2.58-3.9,2.35-4.53-0.22-.6-1.57-0.44-1.57-0.44l-4.51.03a1.02,1.02,0,0,0-.59.1,1.193,1.193,0,0,0-.39.47,26.549,26.549,0,0,1-1.67,3.47c-2.01,3.35-2.81,3.53-3.14,3.32-0.76-.48-0.57-1.95-0.57-2.99,0-3.25.5-4.61-.98-4.96a7.5,7.5,0,0,0-2.1-.21,10.009,10.009,0,0,0-3.74.38c-0.52.25-.91,0.8-0.67,0.83a2.039,2.039,0,0,1,1.33.66,4.229,4.229,0,0,1,.44,2.01s0.27,3.83-.62,4.3c-0.6.33-1.44-.34-3.23-3.38a29.376,29.376,0,0,1-1.61-3.29,1.266,1.266,0,0,0-.37-0.49,1.916,1.916,0,0,0-.69-0.28l-4.29.03a1.516,1.516,0,0,0-.88.29,0.893,0.893,0,0,0-.01.75s3.35,7.73,7.15,11.63A10.356,10.356,0,0,0,6562.68,4044.76Z" transform="translate(-6548 -4028)"/>
+    </symbol>
+    <symbol viewBox="0 0 30 21" id="youtube-logo">
+      <path class="cls-1" d="M6622.01,4025H6622s-6.29,0-10.49.3a4.294,4.294,0,0,0-3,1.27,6.485,6.485,0,0,0-1.2,2.96,45.088,45.088,0,0,0-.3,4.84v2.26a45.088,45.088,0,0,0,.3,4.84,6.445,6.445,0,0,0,1.2,2.96,5.129,5.129,0,0,0,3.3,1.28c2.4,0.23,10.2.3,10.2,0.3h0s6.3-.01,10.49-0.31a4.313,4.313,0,0,0,3.01-1.27,6.388,6.388,0,0,0,1.19-2.96,45.088,45.088,0,0,0,.3-4.84v-2.26a45.088,45.088,0,0,0-.3-4.84,6.427,6.427,0,0,0-1.19-2.96,4.313,4.313,0,0,0-3.01-1.27c-4.19-.3-10.49-0.3-10.49-0.3m-3.13,6.23,7.96,4.13-7.96,4.29v-8.42Z" transform="translate(-6607 -4025)"/>
+    </symbol>
+    <symbol viewBox="0 0 12.06 27" id="fb-logo">
+      <path class="cls-1" d="M6517.07,4022.54a16.135,16.135,0,0,0-3.81-.53c-4.07,0-5.7,2.14-5.7,5.96v2.79H6505v4.51h2.56v13.72h4.98v-13.72h3.63l0.34-4.51h-3.97v-2.18c0-1.22.1-1.99,1.69-1.99a12.088,12.088,0,0,1,2.21.27Z" transform="translate(-6505 -4022)"/>
+    </symbol>
+    <symbol viewBox="0 0 23 23" id="insta-logo">
+      <path class="cls-1" d="M6683.15,4023.99h-9.3a6.854,6.854,0,0,0-6.85,6.85v9.3a6.863,6.863,0,0,0,6.85,6.86h9.3a6.863,6.863,0,0,0,6.85-6.86v-9.3A6.854,6.854,0,0,0,6683.15,4023.99Zm4.54,16.15a4.543,4.543,0,0,1-4.54,4.54h-9.3a4.543,4.543,0,0,1-4.54-4.54v-9.3a4.543,4.543,0,0,1,4.54-4.54h9.3a4.543,4.543,0,0,1,4.54,4.54v9.3h0Zm-9.19-10.6a5.95,5.95,0,1,0,5.95,5.95A5.958,5.958,0,0,0,6678.5,4029.54Zm0,9.59a3.64,3.64,0,1,1,3.64-3.64A3.632,3.632,0,0,1,6678.5,4039.13Zm5.96-10.97a1.425,1.425,0,1,1-1.43,1.42A1.428,1.428,0,0,1,6684.46,4028.16Z" transform="translate(-6667 -4024)"/>
+    </symbol>
+    <symbol viewBox="0 0 475.092 475.092" id="google-plus-icon">
+      <path d="M273.372,302.498c-5.041-6.762-10.608-13.045-16.7-18.842c-6.091-5.804-12.183-11.088-18.271-15.845
+			c-6.092-4.757-11.659-9.329-16.702-13.709c-5.042-4.374-9.135-8.945-12.275-13.702c-3.14-4.757-4.711-9.61-4.711-14.558
+			c0-6.855,2.19-13.278,6.567-19.274c4.377-5.996,9.707-11.799,15.986-17.417c6.28-5.617,12.559-11.753,18.844-18.415
+			c6.276-6.665,11.604-15.465,15.985-26.412c4.373-10.944,6.563-23.458,6.563-37.542c0-16.75-3.713-32.835-11.136-48.25
+			c-7.423-15.418-17.89-27.412-31.405-35.976h38.54L303.2,0H178.441c-17.699,0-35.498,1.906-53.384,5.72
+			c-26.453,5.9-48.723,19.368-66.806,40.397C40.171,67.15,31.129,90.99,31.129,117.637c0,28.171,10.138,51.583,30.406,70.233
+			c20.269,18.649,44.585,27.978,72.945,27.978c5.71,0,12.371-0.478,19.985-1.427c-0.381,1.521-1.043,3.567-1.997,6.136
+			s-1.715,4.62-2.286,6.14c-0.57,1.521-1.047,3.375-1.425,5.566c-0.382,2.19-0.571,4.428-0.571,6.71
+			c0,12.563,6.086,26.744,18.271,42.541c-14.465,0.387-28.737,1.67-42.825,3.86c-14.084,2.19-28.833,5.616-44.252,10.28
+			c-15.417,4.661-29.217,11.42-41.396,20.27c-12.182,8.854-21.317,19.366-27.408,31.549C3.533,361.559,0.01,374.405,0.01,386.017
+			c0,12.751,2.857,24.314,8.565,34.69c5.708,10.369,13.035,18.842,21.982,25.406c8.945,6.57,19.273,12.083,30.978,16.562
+			c11.704,4.47,23.315,7.659,34.829,9.562c11.516,1.903,22.888,2.854,34.119,2.854c51.007,0,90.981-12.464,119.909-37.397
+			c26.648-23.223,39.971-50.062,39.971-80.517c0-10.855-1.57-20.984-4.712-30.409C282.51,317.337,278.42,309.254,273.372,302.498z
+			 M163.311,198.722c-9.707,0-18.937-2.475-27.694-7.426c-8.757-4.95-16.18-11.374-22.27-19.273
+			c-6.088-7.898-11.418-16.796-15.987-26.695c-4.567-9.896-7.944-19.792-10.135-29.692c-2.19-9.895-3.284-19.318-3.284-28.265
+			c0-18.271,4.854-33.974,14.562-47.108c9.705-13.134,23.411-19.701,41.112-19.701c12.563,0,23.935,3.899,34.118,11.704
+			c10.183,7.804,18.177,17.701,23.984,29.692c5.802,11.991,10.277,24.407,13.417,37.257c3.14,12.847,4.711,24.983,4.711,36.403
+			c0,19.036-4.139,34.317-12.419,45.833C195.144,192.964,181.775,198.722,163.311,198.722z M242.251,413.123
+			c-5.23,8.949-12.319,15.94-21.267,20.981c-8.946,5.048-18.509,8.758-28.693,11.14c-10.183,2.385-20.889,3.572-32.12,3.572
+			c-12.182,0-24.27-1.431-36.258-4.284c-11.99-2.851-23.459-7.187-34.403-12.991c-10.944-5.8-19.795-13.798-26.551-23.982
+			c-6.757-10.184-10.135-21.744-10.135-34.69c0-11.419,2.568-21.601,7.708-30.55c5.142-8.945,11.709-16.084,19.702-21.408
+			c7.994-5.332,17.319-9.713,27.979-13.131c10.66-3.433,20.937-5.808,30.833-7.139c9.895-1.335,19.985-1.995,30.262-1.995
+			c6.283,0,11.043,0.191,14.277,0.567c1.143,0.767,4.043,2.759,8.708,5.996s7.804,5.428,9.423,6.57
+			c1.615,1.137,4.567,3.326,8.85,6.563c4.281,3.237,7.327,5.661,9.135,7.279c1.803,1.618,4.421,4.045,7.849,7.279
+			c3.424,3.237,5.948,6.043,7.566,8.422c1.615,2.378,3.616,5.28,5.996,8.702c2.38,3.433,4.043,6.715,4.998,9.855
+			c0.948,3.142,1.854,6.567,2.707,10.277c0.855,3.72,1.283,7.569,1.283,11.57C250.105,393.713,247.487,404.182,242.251,413.123z"/>
+      <polygon points="401.998,73.089 401.998,0 365.449,0 365.449,73.089 292.358,73.089 292.358,109.636 365.449,109.636
+			365.449,182.725 401.998,182.725 401.998,109.636 475.081,109.636 475.081,73.089 		"/>
+    </symbol>
+    <symbol viewBox="0 0 357 357" id="plus-small">
+      <path d="M357,204H204v153h-51V204H0v-51h153V0h51v153h153V204z"/>
+    </symbol>
+    <symbol viewBox="0 0 20 14" id="burger-logo">
+      <path id="menu_icon" class="cls-1" d="M8179,167h20v2h-20v-2Zm0,6h20v2h-20v-2Zm0,6h20v2h-20v-2Z" transform="translate(-8179 -167)"/>
+    </symbol>
+    <symbol viewBox="0 0 612.08 612.08" id="search-icon">
+      <path d="M237.927,0C106.555,0,0.035,106.52,0.035,237.893c0,131.373,106.52,237.893,237.893,237.893
+		c50.518,0,97.368-15.757,135.879-42.597l0.028-0.028l176.432,176.433c3.274,3.274,8.48,3.358,11.839,0l47.551-47.551
+		c3.274-3.274,3.106-8.703-0.028-11.838L433.223,373.8c26.84-38.539,42.597-85.39,42.597-135.907C475.82,106.52,369.3,0,237.927,0z
+		 M237.927,419.811c-100.475,0-181.918-81.443-181.918-181.918S137.453,55.975,237.927,55.975s181.918,81.443,181.918,181.918
+		S338.402,419.811,237.927,419.811z"/>
+    </symbol>
+  </svg>
+  <header class="header">
+    <section class="header__wrapper">
+      <div class="header__top">
+        <a href="#" class="header__logo-link">
+          <img src="./img/logo.png" class="header__logo" width="132" height="46" alt="Логотип Трио-Интерьер">
+        </a>
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li class="header__list-item"><a href="#" class="header__link">О нас</a></li>
+            <li class="header__list-item"><a href="#" class="header__link">Проекты</a></li>
+            <li class="header__list-item"><a href="#" class="header__link">Блог</a></li>
+            <li class="header__list-item"><a href="#" class="header__link">Отзывы</a></li>
+            <li class="header__list-item"><a href="#" class="header__link">Производители</a></li>
+            <li class="header__list-item"><a href="#" class="header__link">Где купить</a></li>
+          </ul>
+        </nav>
+        <div class="header__info">
+          <span class="header__phone">+7 (495) 125-46-35</span>
+          <span class="header__work-time">с 10 до 20,  ежедневно</span>
+        </div>
+        <div class="header__basket-block">
+          <a href="#" class="header__basket-link">
+            <span class="header__basket"><img src="./img/basket.svg" class="header__basket-img" width="22" height="22" alt="Иконка корзины">Корзина</span>
+            <span class="header__basket-price">1 458 890 &#x20bd</span>
+          </a>
+        </div>
+        <div class="header__extra-nav">
+          <button type="button" class="header__extra-basket">
+            <img src="./img/basket.svg" class="header__extra-img header__extra-img--basket" width="22" height="22" alt="Иконка корзины">
+          </button>
+          <button type="button" class="header__extra-search">
+            <svg class="header__extra-img header__extra-img--search" width="20" height="20">
+              <use xlink:href="#search-icon"></use>
+            </svg>
+          </button>
+          <button type="button" class="header__extra-menu">
+            <svg width="20" height="14" class="header__extra-img header__extra-img--burger">
+              <use xlink:href="#burger-logo"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="navigation">
+      <div class="navigation__wrapper">
+        <nav>
+          <ul class="navigation__list">
+            <li class="navigation__list-item"><a href="#" class="navigation__link">Каталог товаров</a></li>
+            <li class="navigation__list-item"><a href="#" class="navigation__link">Мебель по стилям</a></li>
+            <li class="navigation__list-item"><a href="#" class="navigation__link">Дизайнерская мебель</a></li>
+            <li class="navigation__list-item"><a href="#" class="navigation__link">Элитная мебель</a></li>
+            <li class="navigation__list-item"><a href="#" class="navigation__link navigation__link--available">Наличие</a></li>
+            <li class="navigation__list-item"><a href="#" class="navigation__link navigation__link--sale">Распродажa</a></li>
+            <li class="navigation__list-item"><a href="#" class="navigation__link navigation__link--gift">Подарки</a></li>
+          </ul>
+          <form class="navigation__form">
+            <label class="navigation__search">
+              <input type="text" id="headerSearch" class="navigation__search-field">
+            </label>
+            <button type="button" class="navigation__button"></button>
+          </form>
+        </nav>
+      </div>
+    </section>
+  </header>
+  <main class="main">
+    <h1 class="visually-hidden">Трио Интерьер</h1>
+    <section class="main__wrapper">
+      <section class="top-bar">
+        <nav class="top-bar__nav">
+          <ul class="top-bar__list">
+            <li class="top-bar__item top-bar__item--main"><a class="top-bar__link " href="#">Главная</a></li>
+            <li class="top-bar__item top-bar__item--catalog"><a class="top-bar__link top-bar__link--catalog" href="#">Каталог</a></li>
+            <li class="top-bar__item top-bar__item--soft-furniture"><a class="top-bar__link" href="#">Мягкая мебель</a></li>
+            <li class="top-bar__item top-bar__item--sofa"><a class="top-bar__link" href="#">Диваны</a></li>
+            <li class="top-bar__item">Диван угловой с комплектом подушек Nuvola от Rolf-benz</li>
+          </ul>
+        </nav>
+      </section>
+      <section class="product">
+        <h2 class="product__title">Диван угловой с комплектом подушек Nuvola от Rolf-benz</h2>
+        <div class="product__content">
+          <div class="product__main-img">
+            <span class="product__sale-icon">-30%</span>
+            <picture class="product__img">
+              <source
+              media="(max-width: 767px)"
+              srcset="./img/Nuvola-sofa-small.jpg">
+              <img src="./img/Nuvola-sofa.jpg" alt="Main product image" id="mainImg">
+            </picture>
+          </div>
+          <div class="product__sliderBox">
+            <button type="button" class="product__slideUp" id="slideUp">
+              <svg  class="product__slideUp-img" width="22" height="22">
+                <use xlink:href="#arrow-up"></use>
+              </svg>
+            </button>
+            <div class="product__slider">
+              <div class="product__slider-line">
+                <a class="product__slider-item">
+                    <img src="./img/chair-small.jpg" id="item-1">
+                </a>
+                <a class="product__slider-item">
+                    <img src="./img/chair-smal-2.jpg" id="item-2">
+                </a>
+                <a class="product__slider-item">
+                  <img src="./img/chair-small-3.jpg" id="item-3">
+                </a>
+                <a class="product__slider-item">
+                  <img src="./img/sofa-small.jpg" id="item-4">
+                </a>
+                <a class="product__slider-item">
+                  <img src="./img/table-small.jpg" id="item-5">
+                </a>
+              </div>
+            </div>
+            <button type="button" class="product__slideDown" id="slideDown">
+              <svg width="22" height="22" class="product__slideDown-img">
+                <use xlink:href="#arrow-down"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="product__info">
+            <div class="product__tableBlock">
+              <table class="product__table">
+                <tr class="product__table-line">
+                  <td class="product__table-column product__table-column--left">Производитель</td>
+                  <td class="product__table-column"><a href="#" class="product__table-link">BAXTER</a></td>
+                </tr>
+                <tr class="product__table-line">
+                  <td class="product__table-column product__table-column--left">Дизайнер</td>
+                  <td class="product__table-column"><a href="#" class="product__table-link">Paola Navone</a></td>
+                </tr>
+                <tr class="product__table-line">
+                  <td class="product__table-column product__table-column--left">Номер товара</td>
+                  <td class="product__table-column">T121884 / 16744</td>
+                </tr>
+                <tr class="product__table-line">
+                  <td class="product__table-column product__table-column--left">Страна / Стиль</td>
+                  <td class="product__table-column">Италия / Современный</td>
+                </tr>
+                <tr class="product__table-line">
+                  <td class="product__table-column product__table-column--left">Материалы</td>
+                  <td class="product__table-column">Металл <br> Дерево</td>
+                </tr>
+                <tr class="product__table-line">
+                  <td class="product__table-column product__table-column--left">Размеры</td>
+                  <td class="product__table-column">59*66*h80 <br> 59*66*h80</td>
+                </tr>
+              </table>
+            </div>
+            <div class="product__value">
+              <div class="product__priceBlock">
+                <span class="product__availability">В наличии</span>
+                <span class="product__price">1 145 890&#x20bd</span>
+                <span class="product__oldPrice">1 245 890&#x20bd</span>
+              </div>
+              <button type="button" class="product__buyBtn">Купить</button>
+            </div>
+            <div class="product__social">
+              <p class="product__details">
+                <a href="#" class="product__details-link">Уточнить детали</a>
+              </p>
+              <div class="product__media">
+                <ul class="product__media-list">
+                  <li class="product__media-item">
+                    <svg class="product__media-logo" width="17" height="10">
+                      <use xlink:href="#vk-logo"></use>
+                    </svg>
+                  </li>
+                  <li class="product__media-item">
+                    <svg class="product__media-logo" width="8" height="15">
+                      <use xlink:href="#fb-logo"></use>
+                    </svg>
+                  </li>
+                  <li class="product__media-item">
+                    <svg class="product__media-logo" width="19" height="15">
+                      <use xlink:href="#google-plus-icon"></use>
+                    </svg>
+                  </li>
+                  <li class="product__media-item">
+                    <span class="product__media-plus">
+                      <svg width="12" height="12">
+                        <use xlink:href="#plus-small"></use>
+                      </svg>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="product__hashtags">
+                <a class="product__hashtag-link" href="#">#большие кресла</a>
+                <a class="product__hashtag-link" href="#">#кресла с высокой спинкой</a>
+                <a class="product__hashtag-link" href="#">#необычные кресла</a>
+                <a class="product__hashtag-link" href="#">#дизайнерские кресла</a>
+                <a class="product__hashtag-link" href="#">#классические кресла</a>
+                <a class="product__hashtag-link" href="#">#полукресла</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="tab-widget">
+        <div class="tab-widget__tabs">
+          <ul class="tab-widget__tabs-list">
+            <li class="tab-widget__tab-item tab-widget__tab-item--active">Описание</li>
+            <li class="tab-widget__tab-item">Доставка</li>
+            <li class="tab-widget__tab-item">Оплата товара</li>
+          </ul>
+        </div>
+        <div class="tab-widget__content">
+          <div class="tab-widget__description-content">
+            <div class="tab-widget__description">
+              <p class="tab-widget__desc-text tab-widget__desc-text--goods-desc">Кресло SELLERINA ALLUMINIO. Модель можно использовать как внутри помещения, так и на улице. Цельная модель, изготовленная из алюминия.</p>
+              <p class="tab-widget__desc-text">Модель SELLERINA ALLUMINIO использована в проекте <a href="#" class="tab-widget__text-link">Буквы, роботы и лягушки</a>.</p>
+            </div>
+            <div class="tab-widget__linksBlock">
+              <img src="./img/baxter-logo.jpg" width="100" height="74" alt="Логотип компании Baxter" class="tab-widget__logo">
+              <div class="tab-widget__links">
+                <a href="#" class="tab-widget__link">Все диваны</a>
+                <a href="#" class="tab-widget__link">BAXTER</a>
+              </div>
+            </div>
+            <div class="tab-widget__delivery__content"></div>
+            <div class="tab-widget__payment-content"></div>
+          </div>
+        </div>
+      </section>
+      <section class="video-review">
+        <h2 class="video-review__title">Видео-обзор дивана Mio</h2>
+        <div class="video-review__video-wrapper">
+          <button type="button" class="video-review__btn-play"></button>
+          <video width="1200" height="503" poster="./img/video-poster.jpg">
+          </video>
+        </div>
+      </section>
+      <section class="advantages">
+        <h2 class="advantages__title">Преимущества компании «Трио»</h2>
+        <ul class="advantages__list">
+          <li class="advantages__item">
+            <img src="img/adv-medal.svg" width="60" height="72" alt="лого приемуществ">
+            <span class="advantages__text">20 лет<br>на рынке</span>
+          </li>
+          <li class="advantages__item">
+            <img src="img/adv-chair.svg" width="80" height="63" alt="лого приемуществ">
+            <span class="advantages__text">1500+ товаров<br>в наличии</span>
+          </li>
+          <li class="advantages__item">
+            <img src="img/adv-box.svg" width="65" height="65" alt="лого приемуществ">
+            <span class="advantages__text">200 м2<br>шоурум</span>
+          </li>
+          <li class="advantages__item">
+            <img src="img/adv-circles.png" width="60" height="75" alt="лого приемуществ">
+            <span class="advantages__text">3D тур<br>на сайте</span>
+          </li>
+          <li class="advantages__item">
+            <img src="img/adv-woodwork.svg" width="60" height="75" alt="лого приемуществ">
+            <span class="advantages__text">300+<br>производителей</span>
+          </li>
+        </ul>
+      </section>
+    </section>
+    <section class="similar">
+      <div class="similar__header">
+        <h2 class="similar__title">Похожие товары</h2>
+        <a href="#" class="similar__link">С этим товаром покупают</a>
+        <button class="similar__header-btn" type="button">
+          <svg width="14px" height="10px">
+            <use xlink:href="#arrow-down"></use>
+          </svg>
+        </button>
+      </div>
+      <div class="similar__goods">
+        <div class="similar__item">
+          <img src="./img/whiteChair-item.jpg" width="324" height="320" alt="Стул Белый" class="similar__item-img">
+          <div class="similar__item-info">
+            <h3 class="similar__item-title">Draenert</h3>
+            <p class="similar__item-text">Стул Coco Soft 2023</p>
+            <span class="similar__item-price">от 110 484 &#x20bd</span>
+          </div>
+        </div>
+        <div class="similar__item">
+          <img src="./img/greyChair-item.jpg" width="320" height="320" alt="Серый стул" class="similar__item-img">
+          <div class="similar__item-info">
+            <h3 class="similar__item-title">Cattelan Italia</h3>
+            <p class="similar__item-text">Стол Domino</p>
+            <span class="similar__item-price">от 264 630 &#x20bd</span>
+          </div>
+        </div>
+        <div class="similar__item">
+          <img src="./img/darkGreyChair-item.jpg" width="319" height="320" alt="Темно-серый стул" class="similar__item-img">
+          <div class="similar__item-info">
+            <h3 class="similar__item-title">Magis</h3>
+            <p class="similar__item-text">Вращающееся кресло Spun</p>
+            <span class="similar__item-price">от 110 484 &#x20bd</span>
+          </div>
+        </div>
+        <div class="similar__item">
+          <img src="./img/printChair-item.jpg" width="320" height="320" alt="Стул с узором" class="similar__item-img">
+          <div class="similar__item-info">
+            <h3 class="similar__item-title">Cantori</h3>
+            <p class="similar__item-text">Дизайнерская кровать Urbino</p>
+            <span class="similar__item-price">381 960 &#x20bd</span>
+          </div>
+        </div>
+        <div class="similar__item">
+          <img src="./img/greenSofa-item.jpg" width="320" height="320" alt="Зеленое кресло" class="similar__item-img">
+          <div class="similar__item-info">
+            <h3 class="similar__item-title">Baxter</h3>
+            <p class="similar__item-text">Дизайнерский диван Mio</p>
+            <span class="similar__item-price">277 723 &#x20bd</span>
+          </div>
+        </div>
+        <div class="similar__item">
+          <img src="./img/pinkChair-item.jpg" width="316" height="320" alt="Розовый стул" class="similar__item-img">
+          <div class="similar__item-info">
+            <h3 class="similar__item-title">Magis</h3>
+            <p class="similar__item-text">Вращающееся кресло Spun</p>
+            <span class="similar__item-price">от 110 484 &#x20bd</span>
+          </div>
+        </div>
+      </div>
+      <div class="similar__nav">
+        <button type="button" class="similar__btn-left" id="similarBtnLeft">
+          <svg class="similar__btn-left-img" width="24" height="15">
+            <use xlink:href="#arrow-right"></use>
+          </svg>
+        </button>
+        <button type="button" class="similar__btn-right" id="similarBtnRight">
+          <svg class="similar__btn-right-img" width="24" height="15">
+            <use xlink:href="#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </section>
+    <section class="watched">
+      <h2 class="watched__title">Вы недавно смотрели</h2>
+      <div class="watched__goods">
+        <div class="watched__item">
+          <img src="./img/whiteChair-item.jpg" width="324" height="320" alt="Стул Белый" class="watched__item-img">
+          <div class="watched__item-info">
+            <h3 class="watched__item-title">Draenert</h3>
+            <p class="watched__item-text">Стул Coco Soft 2023 </p>
+            <span class="watched__item-price">от 110 484 &#x20bd</span>
+          </div>
+        </div>
+        <div class="watched__item">
+          <img src="./img/greyChair-item.jpg" width="320" height="320" alt="Серый стул" class="watched__item-img">
+          <div class="watched__item-info">
+            <h3 class="watched__item-title">Cattelan Italia</h3>
+            <p class="watched__item-text">Стол Domino</p>
+            <span class="watched__item-price">от 264 630 &#x20bd</span>
+          </div>
+        </div>
+        <div class="watched__item">
+          <img src="./img/darkGreyChair-item.jpg" width="319" height="320" alt="Темно-серый стул" class="watched__item-img">
+          <div class="watched__item-info">
+            <h3 class="watched__item-title">Magis</h3>
+            <p class="watched__item-text">Вращающееся кресло Spun</p>
+            <span class="watched__item-price">от 110 484 &#x20bd</span>
+          </div>
+        </div>
+        <div class="watched__item">
+          <img src="./img/printChair-item.jpg" width="320" height="320" alt="Стул с узором" class="watched__item-img">
+          <div class="watched__item-info">
+            <h3 class="watched__item-title">Cantori</h3>
+            <p class="watched__item-text">Дизайнерская кровать Urbino</p>
+            <span class="watched__item-price">381 960 &#x20bd</span>
+          </div>
+        </div>
+        <div class="watched__item">
+          <img src="./img/greenSofa-item.jpg" width="320" height="320" alt="Зеленое кресло" class="watched__item-img">
+          <div class="watched__item-info">
+            <h3 class="watched__item-title">Baxter</h3>
+            <p class="watched__item-text">Дизайнерский диван Mio</p>
+            <span class="watched__item-price">277 723 &#x20bd</span>
+          </div>
+        </div>
+        <div class="watched__item">
+          <img src="./img/pinkChair-item.jpg" width="316" height="320" alt="Розовый стул" class="watched__item-img">
+          <div class="watched__item-info">
+            <h3 class="watched__item-title">Magis</h3>
+            <p class="watched__item-text">Вращающееся кресло Spun</p>
+            <span class="watched__item-price">от 110 484 &#x20bd</span>
+          </div>
+        </div>
+      </div>
+      <div class="watched__nav">
+        <button type="button" class="watched__btn-left" id="watchedBtnLeft">
+          <svg class="watched__btn-left-img" width="24" height="15">
+            <use xlink:href="#arrow-right"></use>
+          </svg>
+        </button>
+        <button type="button" class="watched__btn-right" id="watchedBtnRight">
+          <svg class="watched__btn-right-img" width="24" height="15">
+            <use xlink:href="#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </section>
+    <section class="mailing">
+      <div class="mailing__wrapper">
+        <h2 class="mailing__title">Рассылка от «Трио» станет отличным мостиком <br><span>в мир современного интерьера</span></h2>
+        <div class="mailing__buttons">
+          <button type="button"class="mailing__btn mailing__btn--client">Я частный клиент</button>
+          <button type="button" class="mailing__btn mailing__btn--designer">Я дизайнер</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <section class="footer__wrapper">
+      <div class="footer__logo">
+        <a href="#" class="footer__logo-link">
+          <img src="./img/logo.png" class="footer__logo-img" width="132" height="46" alt="Логотип Трио-Интерьер">
+        </a>
+      </div>
+      <div class="footer__contacts">
+        <span class="footer__phone">+7 (495) 120-92-57</span>
+        <span class="footer__email">info@trio.ru</span>
+      </div>
+      <div class="footer__links">
+        <a href="#" class="footer__link-logIn">Личный кабинет</a>
+        <a href="#" class="footer__link-confidential">Политика конфиденциа́льности</a>
+      </div>
+      <div class="footer__social">
+        <ul class="footer__soc-list">
+          <li class="footer__soc-item">
+            <svg class="footer__soc-img" width="12.06" height="27">
+              <use xlink:href="#fb-logo"></use>
+            </svg>
+          </li>
+          <li class="footer__soc-item">
+            <svg class="footer__soc-img" width="30" height="17">
+              <use xlink:href="#vk-logo"></use>
+            </svg>
+          </li>
+          <li class="footer__soc-item">
+            <svg class="footer__soc-img" width="30" height="21">
+              <use xlink:href="#youtube-logo"></use>
+            </svg>
+          </li>
+          <li class="footer__soc-item">
+          <svg class="footer__soc-img" width="23" height="23">
+            <use xlink:href="#insta-logo"></use>
+          </svg>
+        </li>
+        </ul>
+      </div>
+    </section>
+    <section class="footer__copyright">
+      <p class="footer__copy-text">© ТРИО-Интерьер, 2018. Интернет-магазин мебели из Италии и Германии</p>
+    </section>
+  </footer>
+
+  <!--PopUps-->
+
+  <section class="question question--closed">
+    <div class="question__wrapper">
+      <h2 class="question__title">Задать вопрос</h2>
+      <div class="question__formBlock">
+        <form class="question__form">
+          <label class="question__block">
+            <span class="question__text">Контактное лицо</span>
+            <input type="text" class="question__field question__field--name">
+          </label>
+          <label class="question__block">
+            <span class="question__text">Телефон</span>
+            <input type="tel" class="question__field question__field--phone">
+          </label>
+          <label class="question__block">
+            <span class="question__text">Email</span>
+            <input type="email" class="question__field question__field--email">
+          </label>
+          <label class="question__block">
+            <span class="question__text">Ваше сообщение</span>
+            <input type="text" class="question__field question__field--message">
+          </label>
+          <label class="question__checkbox-block">
+            <input type="checkbox" class="visually-hidden" checked>
+            <span class="question__checkbox"></span>
+            <span class="question__checkbox-text">Я даю свое согласие на обработку <a class="question__link">персональных данных</a>.</span>
+          </label>
+          <button type="submit" class="question__button">Отправить</button>
+        </form>
+      </div>
+      <div class="question__close"></div>
+    </div>
+  </section>
+
+
+  <section class="basket-add basket-add--closed">
+    <div class="basket-add__wrapper">
+      <h2 class="basket-add__title">Товар добавлен в корзину</h2>
+      <div class="basket-add__links">
+        <a class="basket-add__link basket-add__link--back" href="#">Вернуться в каталог</a>
+        <a class="basket-add__link basket-add__link--order" href="#">Оформить заказ</a>
+      </div>
+      <div class="basket-add__close"></div>
+    </div>
+  </section>
+</body>
+</html>

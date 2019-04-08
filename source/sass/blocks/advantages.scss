@@ -1,0 +1,57 @@
+.advantages {
+  width: 100%;
+  @include reset;
+  margin-bottom: 100px;
+}
+
+.advantages__title {
+  display: block;
+  @include reset;
+  margin-bottom: 32px;
+  font-family: "Circ-Light", sans-serif;
+  color: $grey-font;
+  font-size: 32px;
+  line-height: 46px;
+  font-weight: 200;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+.advantages__list {
+  @include reset;
+  padding: 13px 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.advantages__item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding-left: 55px;
+
+  &:first-child {
+    padding-left: 45px;
+  }
+}
+
+.advantages__item img {
+  margin-right: 15px;
+}
+
+.advantages__text {
+  display: block;
+  font-family: "Circ-ExtraBold", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+
+@media (max-width: $tablet-max-width) {
+  .advantages {
+    display: none;
+  }
+}

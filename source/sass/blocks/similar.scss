@@ -1,0 +1,161 @@
+.similar {
+  width: 100%;
+  @include reset;
+  overflow: hidden;
+  margin-bottom: 70px;
+}
+
+.similar__header {
+  @include reset;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 38px;
+}
+
+.similar__header-btn {
+  display: none;
+}
+
+.similar__title,
+.similar__link {
+  @include reset;
+  font-family: "Circ-Light", sans-serif;
+  font-weight: 200;
+  font-size: 26px;
+  line-height: 45px;
+  margin-right: 45px;
+}
+
+.similar__link {
+  color: $light-green;
+  border-bottom: 1px dashed $light-green-hover;
+
+  &:hover,
+  &:focus {
+    border-color: $no-color;
+  }
+}
+
+.similar__goods {
+  @include reset;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 40px;
+}
+
+.similar__item {
+  width:320px;
+  border: 1px solid $light-grey-border;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    border-right: none;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 10px $grey-light-icon;
+  }
+}
+
+.similar__item-img {
+  width: 320px;
+  height: 320px;
+}
+
+.similar__item-info {
+  width: 321px;
+  overflow: hidden;
+  @include reset;
+  padding: 28px 40px 0;
+
+}
+
+.similar__item-title {
+  display: block;
+  @include reset;
+  color: $light-green;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.similar__item-text {
+  @include reset;
+  padding-top: 16px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.similar__item-price {
+  font-size: 20px;
+  line-height: 58px;
+  font-weight: 600;
+}
+
+.similar__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.similar__btn-left,
+.similar__btn-right {
+  width: 25px;
+  height: 20px;
+  @include reset;
+  border: none;
+  background-color: $no-color;
+}
+
+.similar__btn-left {
+  transform: rotate(180deg);
+  margin-right: 15px;
+}
+
+.similar__btn-right-img,
+.similar__btn-left-img {
+  width: 25px;
+  height: 20px;
+  fill: $grey-font;
+
+  &:hover,
+  &:focus {
+    fill: $light-green-hover;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .similar__title {
+    @include reset;
+    color: $light-green;
+    border-bottom: 1px dashed $light-green;
+    line-height: 36px;
+  }
+
+  .similar__link {
+    display: none;
+  }
+
+  .similar__header {
+    align-items: center;
+  }
+
+  .similar__header-btn {
+    display: block;
+    @include reset;
+    padding-top: 3px;
+    margin-left: 10px;
+  }
+
+  .similar__header-btn svg {
+    fill: $light-green;
+    width: 30px;
+    height: 30px;
+  }
+}

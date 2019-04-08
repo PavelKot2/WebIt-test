@@ -1,0 +1,33 @@
+//////////////////////////
+////////General
+//////////////////////////
+
+@import "./general/normalize.scss";
+@import "./general/global.scss";
+@import "./general/config.scss";
+@import "./general/mixins.scss";
+
+
+//////////////////////////
+////////Blocks
+//////////////////////////
+
+@import "./blocks/header.scss";
+@import "./blocks/navigation.scss";
+@import "./blocks/main.scss";
+@import "./blocks/top-bar.scss";
+@import "./blocks/product.scss";
+@import "./blocks/tab-widget.scss";
+@import "./blocks/video-review.scss";
+@import "./blocks/advantages.scss";
+@import "./blocks/similar.scss";
+@import "./blocks/watched.scss";
+@import "./blocks/mailing.scss";
+@import "./blocks/footer.scss";
+
+//////////////////////////
+////////POP-UPs
+//////////////////////////
+
+@import "./blocks/question.scss";
+@import "./blocks/basket-add.scss";

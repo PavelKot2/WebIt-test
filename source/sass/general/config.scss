@@ -1,0 +1,74 @@
+////////////////
+////////Width
+////////////////
+
+$desctop-width: 1200px;
+$tablet-max-width: 1199px;
+$tablet-width: 688px;
+$mobile-max-width:767px;
+$mobile-width: 320px;
+$mobile-width-wrapper: 281px;
+
+////////////////
+////////FONTS
+////////////////
+
+@font-face {
+  font-family: "Circ-Light", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+
+  src: url("../fonts/Circe-Light.ttf") format("ttf"),
+       url("../fonts/Circe-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Circe", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+
+  src: url("../fonts/Circe-Regular.ttf") format("ttf"),
+       url("../fonts/Circe-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Circ-Bold", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+
+  src: url("../fonts/Circe-Bold.ttf") format("ttf"),
+       url("../fonts/Circe-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Circ-ExtraBold", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+
+  src: url("../fonts/Circe-ExtraBold.ttf") format("ttf"),
+       url("../fonts/Circe-ExtraBold.woff") format("woff");
+}
+
+
+
+////////////////
+////////COLORS
+////////////////
+
+$white: #ffffff;
+$black: #000000;
+$grey-font: #2f2f2f;
+$light-grey: #f9f9f9;
+$light-grey-border: #e4e4e4;
+$light-grey-font: #787878;
+$grey-light-icon:#dcdcdc;
+$grey-icons: #d9d9d9;
+$light-green: #00aeac;
+$light-green-hover: #00c4c2;
+$soft-green: #ccf3f3;
+$no-color: rgba(0, 0, 0, 0);
+$orange: #e66446;

@@ -1,0 +1,178 @@
+.question {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background-color: $light-green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &--closed {
+    display: none;
+  }
+}
+
+.question__wrapper {
+  width: 750px;
+  @include reset;
+  position: relative;
+}
+.question__title {
+  display: block;
+  @include reset;
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: "Circ-Light", sans-serif;
+  color: $white;
+  font-weight: 200;
+  font-size: 36px;
+  line-height: 46px;
+  letter-spacing: 2px;
+}
+
+.question__formBlock {
+  @include reset;
+}
+
+.question__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.question__block {
+  width: 100%;
+  @include reset;
+  padding: 10px 0;
+  position: relative;
+}
+
+.question__text {
+  color: $white;
+  font-size: 16px;
+  line-height: 46px;
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+}
+
+.question__field {
+  width: 100%;
+  height: 48px;
+  @include reset;
+  padding-left: 150px;
+  border: none;
+  background-color: $no-color;
+  border-bottom: 1px solid $light-green-hover;
+  color: $white;
+  font-size: 16px;
+  line-height: 46px;
+  margin-bottom: 20px;
+  outline: none;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    border-color: $white;
+  }
+}
+
+.question__checkbox-block {
+  width: 100%;
+  @include reset;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 45px;
+}
+
+.question__checkbox {
+  width: 22px;
+  height: 22px;
+  background-color: $no-color;
+  border: 1px solid $white;
+
+  &:checked {
+    background-color: $no-color;
+  }
+}
+
+.question__checkbox-block input[type="checkbox"] + .question__checkbox {
+  display: block;
+  position: relative;
+  @include reset;
+  width: 22px;
+  height: 22px;
+  border: 1px solid $white;
+}
+
+.question__checkbox-block input[type="checkbox"]:checked + .question__checkbox {
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/checked-checkbox.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.question__checkbox-text {
+  margin-left: 12px;
+  color: $white;
+  font-size: 16px;
+  line-height: 46px;
+}
+
+.question__link {
+  color: $white;
+  font-size: 16px;
+  line-height: 46px;
+  border-bottom: 1px dashed $light-green-hover;
+  padding-bottom: 5px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border-color: $no-color;
+  }
+}
+
+.question__button {
+  width: 200px;
+  @include reset;
+  text-align: center;
+  background-color: $no-color;
+  color: $white;
+  font-size: 16px;
+  line-height: 46px;
+  border: 2px solid $white;
+
+  &:hover,
+  &:focus {
+    color: $grey-font;
+    background-color: white;
+  }
+}
+
+.question__close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  cursor: pointer;
+  background-image: url("../img/close-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}

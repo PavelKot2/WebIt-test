@@ -1,0 +1,80 @@
+.basket-add {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background-color: $light-green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &--closed {
+    display: none;
+  }
+}
+
+.basket-add__wrapper {
+  width: 750px;
+  @include reset;
+  position: relative;
+  padding-top: 50px;
+}
+
+.basket-add__title {
+  display: block;
+  @include reset;
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: "Circ-Light", sans-serif;
+  color: $white;
+  font-weight: 200;
+  font-size: 36px;
+  line-height: 46px;
+  letter-spacing: 2px;
+}
+
+.basket-add__links {
+  width: 100%;
+  @include reset;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.basket-add__link {
+  width: 200px;
+  @include reset;
+  text-align: center;
+  background-color: $no-color;
+  color: $white;
+  font-size: 16px;
+  line-height: 46px;
+  font-weight: 400;
+  border: 2px solid $white;
+
+  &:hover,
+  &:focus {
+    color: $grey-font;
+    background-color: white;
+  }
+
+  &--back {
+    margin-right: 45px;
+  }
+}
+
+.basket-add__close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-image: url("../img/close-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}

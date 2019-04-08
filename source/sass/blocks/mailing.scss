@@ -1,0 +1,110 @@
+.mailing {
+  width: 100%;
+  min-height: 280px;
+  @include reset;
+  background-color: $grey-font;
+  background-image: url("../img/sofa-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mailing__wrapper {
+  width: $desctop-width;
+  @include reset;
+  @include blockCenter;
+  padding: 62px 0;
+}
+
+.mailing__title {
+  display: block;
+  text-align: center;
+  @include reset;
+  margin: 0 auto;
+  font-family: "Circ-Light", sans-serif;
+  font-weight: 200;
+  font-size: 32px;
+  line-height: 36px;
+  color: $white;
+  margin-bottom: 40px;
+}
+
+.mailing__buttons {
+  width: 700px;
+  @include reset;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.mailing__btn {
+  width: 230px;
+  padding: 11px 0;
+  background-color: $no-color;
+  color: $white;
+  border: 1px solid $white;
+  font-size: 18px;
+  line-height: 20px;
+
+  &--client {
+    margin-right: 41px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $light-green;
+    border-color: $light-green;
+  }
+}
+
+@media (max-width: $tablet-max-width) {
+  .mailing {
+    background-image: url("../img/sofa-bg-tablet.jpg");
+    background-size: cover;
+  }
+
+  .mailing__wrapper {
+    width: $tablet-width;
+  }
+
+  .mailing__title {
+    font-size: 28px;
+  }
+}
+
+
+@media (max-width: $mobile-max-width) {
+  .mailing {
+    background-size: cover;
+    background-position: left 53% center;
+  }
+
+  .mailing__wrapper {
+    width: $mobile-width-wrapper;
+    padding: 62px 0 90px;
+  }
+
+  .mailing__title {
+    font-size: 22px;
+  }
+
+  .mailing__title span {
+    display: none;
+  }
+
+  .mailing__buttons {
+    width: 100%;
+    @include reset;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mailing__btn {
+    width: 240px;
+  }
+
+  .mailing__btn--client {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}

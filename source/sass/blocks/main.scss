@@ -1,0 +1,21 @@
+.main {
+  width: 100%;
+  @include reset;
+}
+
+.main__wrapper {
+  width: $desctop-width;
+  @include blockCenter;
+}
+
+@media (max-width: $tablet-max-width) {
+  .main__wrapper{
+    width: $tablet-width;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .main__wrapper {
+    width: $mobile-width-wrapper;
+  }
+}
